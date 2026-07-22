@@ -1,0 +1,38 @@
+<idea-plugin>
+  <id>com.timeprooflabs.truthspine</id>
+  <name>TruthSpine</name>
+  <vendor email="support@timeprooflabs.com" url="https://timeprooflabs.com">TimeProofLabs</vendor>
+  <description><![CDATA[
+    <p>Current project Truth for AI workspaces.</p>
+    <p>TruthSpine keeps decisions, sources, history, and next work available without making you explain the project again.</p>
+    <ul>
+      <li>Connect the exact project open in your JetBrains IDE.</li>
+      <li>Open the local TruthSpine app from the Tools menu.</li>
+      <li>Copy the short chat attach phrase when your workspace needs it.</li>
+    </ul>
+    <p>TruthSpine is local-first. This plugin does not collect telemetry or upload project content.</p>
+  ]]></description>
+  <depends>com.intellij.modules.platform</depends>
+  <extensions defaultExtensionNs="com.intellij">
+    <notificationGroup id="TruthSpine" displayType="BALLOON" isLogByDefault="true"/>
+  </extensions>
+  <actions>
+    <group id="TruthSpine.Actions" text="TruthSpine" popup="true" icon="/icons/truthspine.svg">
+      <add-to-group group-id="ToolsMenu" anchor="last"/>
+      <action id="TruthSpine.ConnectCurrentProject"
+              class="com.timeprooflabs.truthspine.ConnectCurrentProjectAction"
+              text="Connect Current Project"
+              description="Connect the exact open project to TruthSpine"
+              icon="/icons/truthspine.svg"/>
+      <action id="TruthSpine.Open"
+              class="com.timeprooflabs.truthspine.OpenTruthSpineAction"
+              text="Open TruthSpine"
+              description="Open the local TruthSpine app"/>
+      <separator/>
+      <action id="TruthSpine.CopyAttachPhrase"
+              class="com.timeprooflabs.truthspine.CopyAttachPhraseAction"
+              text="Copy Attach TruthSpine"
+              description="Copy the phrase used to attach a chat"/>
+    </group>
+  </actions>
+</idea-plugin>
