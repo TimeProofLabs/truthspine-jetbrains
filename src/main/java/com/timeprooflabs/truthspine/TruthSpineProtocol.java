@@ -4,6 +4,8 @@ import com.intellij.ide.BrowserUtil;
 import com.intellij.notification.NotificationGroupManager;
 import com.intellij.notification.NotificationType;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.util.SystemInfo;
+import java.io.IOException;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 
@@ -17,13 +19,38 @@ final class TruthSpineProtocol {
             return;
         }
         String encodedRoot = URLEncoder.encode(projectRoot, StandardCharsets.UTF_8);
-        BrowserUtil.browse("truthspine://connector/setup?host=jetbrains&project=" + encodedRoot);
-        notify(project, "TruthSpine is connecting this project.", NotificationType.INFORMATION);
+        String url = "truthspine://connector/setup?host=jetbrains&project=" + encodedRoot;
+        if (openRegisteredApp(url)) {
+            notify(project, "TruthSpine is connecting this project.", NotificationType.INFORMATION);
+        } else {
+            notify(project, "TruthSpine could not open. Start the TruthSpine app and try again.", NotificationType.WARNING);
+        }
     }
 
     static void openApp(Project project) {
-        BrowserUtil.browse("truthspine://open");
-        notify(project, "Opening TruthSpine.", NotificationType.INFORMATION);
+        if (openRegisteredApp("truthspine://open")) {
+            notify(project, "Opening TruthSpine.", NotificationType.INFORMATION);
+        } else {
+            notify(project, "TruthSpine could not open. Start the TruthSpine app and try again.", NotificationType.WARNING);
+        }
+    }
+
+    private static boolean openRegisteredApp(String url) {
+        try {
+            ProcessBuilder launcher;
+            if (SystemInfo.isWindows) {
+                launcher = new ProcessBuilder("rundll32.exe", "url.dll,FileProtocolHandler", url);
+            } else if (SystemInfo.isMac) {
+                launcher = new ProcessBuilder("open", url);
+            } else {
+                launcher = new ProcessBuilder("xdg-open", url);
+            }
+            launcher.start();
+            return true;
+        } catch (IOException ignored) {
+            BrowserUtil.browse(url);
+            return false;
+        }
     }
 
     static void notify(Project project, String message, NotificationType type) {

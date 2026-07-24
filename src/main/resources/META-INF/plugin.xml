@@ -29,6 +29,10 @@
               text="Open TruthSpine"
               description="Open the local TruthSpine app"/>
       <separator/>
+      <action id="TruthSpine.CopyMcpConfiguration"
+              class="com.timeprooflabs.truthspine.CopyMcpConfigurationAction"
+              text="Copy MCP Configuration"
+              description="Copy the project-level TruthSpine MCP configuration"/>
       <action id="TruthSpine.CopyAttachPhrase"
               class="com.timeprooflabs.truthspine.CopyAttachPhraseAction"
               text="Copy Attach TruthSpine"
