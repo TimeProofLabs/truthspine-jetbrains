@@ -3,14 +3,16 @@
   <name>TruthSpine</name>
   <vendor email="support@timeprooflabs.com" url="https://timeprooflabs.com">TimeProofLabs</vendor>
   <description><![CDATA[
-    <p>Current project Truth for AI workspaces.</p>
-    <p>TruthSpine keeps decisions, sources, history, and next work available without making you explain the project again.</p>
+    <p><strong>TruthSpine Knows Your Project Truth and Automatically Keeps Your Agents Current, Start to Finish.</strong></p>
+    <p>TruthSpine knows your project truth from the sources you connect, keeps it current as your project changes, and automatically gives your connected agents the project knowledge and next work they need.</p>
+    <p>It gives every connected agent the decisions, sources, history, rules, and next work it needs while TruthSpine works quietly in the background.</p>
     <ul>
       <li>Connect the exact project open in your JetBrains IDE.</li>
       <li>Open the local TruthSpine app from the Tools menu.</li>
       <li>Copy the short chat attach phrase when your workspace needs it.</li>
     </ul>
     <p>TruthSpine is local-first. This plugin does not collect telemetry or upload project content.</p>
+    <p>The plugin is free. The TruthSpine desktop app manages the 14-day trial, one-time V1 purchase, restore, and transfer. Installing the plugin never starts the trial.</p>
   ]]></description>
   <depends>com.intellij.modules.platform</depends>
   <extensions defaultExtensionNs="com.intellij">
