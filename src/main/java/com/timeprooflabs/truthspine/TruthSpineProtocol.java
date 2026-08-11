@@ -39,7 +39,7 @@ final class TruthSpineProtocol {
         try {
             ProcessBuilder launcher;
             if (SystemInfo.isWindows) {
-                launcher = new ProcessBuilder("rundll32.exe", "url.dll,FileProtocolHandler", url);
+                launcher = new ProcessBuilder("cmd.exe", "/d", "/c", "start", "", url);
             } else if (SystemInfo.isMac) {
                 launcher = new ProcessBuilder("open", url);
             } else {

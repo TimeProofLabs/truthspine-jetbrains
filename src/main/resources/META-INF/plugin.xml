@@ -1,22 +1,32 @@
-<idea-plugin>
+<idea-plugin url="https://truthspine.app/">
   <id>com.timeprooflabs.truthspine</id>
   <name>TruthSpine</name>
-  <vendor email="support@timeprooflabs.com" url="https://timeprooflabs.com">TimeProofLabs</vendor>
+  <vendor email="support@timeprooflabs.com" url="https://truthspine.app/">TimeProofLabs</vendor>
   <description><![CDATA[
     <p><strong>TruthSpine Knows Your Project Truth and Automatically Keeps Your Agents Current, Start to Finish.</strong></p>
     <p>TruthSpine knows your project truth from the sources you connect, keeps it current as your project changes, and automatically gives your connected agents the project knowledge and next work they need.</p>
-    <p>It gives every connected agent the decisions, sources, history, rules, and next work it needs while TruthSpine works quietly in the background.</p>
     <ul>
       <li>Connect the exact project open in your JetBrains IDE.</li>
       <li>Open the local TruthSpine app from the Tools menu.</li>
       <li>Copy the short chat attach phrase when your workspace needs it.</li>
     </ul>
     <p>TruthSpine is local-first. This plugin does not collect telemetry or upload project content.</p>
-    <p>The plugin is free. The TruthSpine desktop app manages the 14-day trial, one-time V1 purchase, restore, and transfer. Installing the plugin never starts the trial.</p>
+    <p>This connector is free and licensed under Apache License 2.0. The protected TruthSpine desktop app is installed and licensed separately. Installing the plugin does not start a TruthSpine trial or create a separate connector license.</p>
+    <p>On Windows, the 14-day trial starts on the first successful TruthSpine app launch. A one-time USD 95 purchase unlocks TruthSpine V1 and all 1.x updates on one active computer at a time, with deactivation and transfer managed in the app.</p>
+    <p>On Mac, the 14-day trial starts only after you choose it and Apple completes the StoreKit transaction. A one-time USD 95 non-consumable purchase unlocks TruthSpine V1 and all 1.x updates, and Restore Purchases restores access on eligible Macs.</p>
+    <p>Future major versions are separate purchases.</p>
   ]]></description>
+  <change-notes><![CDATA[
+    <ul>
+      <li>Uses the approved white-tree TruthSpine identity in light and dark IDE themes.</li>
+      <li>Clarifies the free connector license and the separate protected desktop app license.</li>
+      <li>States the correct Windows and Mac trial, purchase, restore, and transfer behavior.</li>
+    </ul>
+  ]]></change-notes>
   <depends>com.intellij.modules.platform</depends>
   <extensions defaultExtensionNs="com.intellij">
     <notificationGroup id="TruthSpine" displayType="BALLOON" isLogByDefault="true"/>
+    <postStartupActivity implementation="com.timeprooflabs.truthspine.TruthSpineConnectStartupActivity"/>
   </extensions>
   <actions>
     <group id="TruthSpine.Actions" text="TruthSpine" popup="true" icon="/icons/truthspine.svg">
@@ -39,6 +49,11 @@
               class="com.timeprooflabs.truthspine.CopyAttachPhraseAction"
               text="Copy Attach TruthSpine"
               description="Copy the phrase used to attach a chat"/>
+      <separator/>
+      <action id="TruthSpine.ReviewConnector"
+              class="com.timeprooflabs.truthspine.ReviewConnectorAction"
+              text="Review TruthSpine Connector"
+              description="Review the free TruthSpine connector on JetBrains Marketplace"/>
     </group>
   </actions>
 </idea-plugin>

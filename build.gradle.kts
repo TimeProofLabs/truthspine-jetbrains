@@ -31,7 +31,11 @@ intellijPlatform {
             sinceBuild = "243"
         }
         changeNotes = """
-            <p>Initial release. Connect the exact project open in a JetBrains IDE to local TruthSpine, open the TruthSpine app, or copy the chat attach phrase.</p>
+            <ul>
+              <li>Connects the exact project open in a JetBrains IDE to the protected TruthSpine app.</li>
+              <li>Uses clearer customer-facing setup and license information.</li>
+              <li>Adds a direct, optional JetBrains Marketplace review action.</li>
+            </ul>
         """.trimIndent()
     }
     pluginVerification {
