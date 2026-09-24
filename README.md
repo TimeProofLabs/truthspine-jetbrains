@@ -1,6 +1,12 @@
 # TruthSpine for JetBrains IDEs
 
-**Stop re-explaining your project to every new AI chat.**
+## Stop re-explaining your project to every new AI chat.
+
+*Persistent agent memory and project context for AI coding agents, delivered over MCP — local-first.*
+
+**Project truth** is your project's living record: the latest decisions, completed work, supporting evidence, open uncertainty, and next steps — kept current, stored locally on your machine, and traceable through SHA-256 parent-child lineage. This plugin connects the exact project open in your JetBrains IDE to the local TruthSpine app, so any agent chat can pick up where the project actually stands.
+
+🎬 [Watch TruthSpine brief a brand-new agent chat](https://github.com/TimeProofLabs/truthspine-app#readme) — zero re-explaining, straight to the next work.
 
 TruthSpine automatically gives each connected agent what it needs to continue: your latest project decisions, completed work, supporting evidence, and next steps.
 
