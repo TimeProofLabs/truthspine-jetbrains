@@ -8,7 +8,7 @@ public final class ConnectCurrentProjectAction extends AnAction {
     @Override
     public void actionPerformed(@NotNull AnActionEvent event) {
         if (event.getProject() != null) {
-            TruthSpineProtocol.connectProject(event.getProject());
+            TruthSpineSetup.connectWithApproval(event.getProject());
         }
     }
 

@@ -1,39 +1,45 @@
-# TruthSpine for JetBrains IDEs
+# TruthSpine Connector for JetBrains IDEs
 
-## Stop re-explaining your project to every new AI chat.
+**Whole project truth for every AI you use. On your computer. 14-day free trial, then $99.99 once, down from $249.99 for a limited time.**
 
-*Persistent agent memory and project context for AI coding agents, delivered over MCP — local-first.*
+**You lead the work. TruthSpine keeps the truth.**
 
-**Project truth** is your project's living record: the latest decisions, completed work, supporting evidence, open uncertainty, and next steps — kept current, stored locally on your machine, and traceable through SHA-256 parent-child lineage. This plugin connects the exact project open in your JetBrains IDE to the local TruthSpine app, so any agent chat can pick up where the project actually stands.
+The keeper of your project. One checked record of what was decided, what was done, what failed and what comes next. Every connected chat starts already knowing your project. Your project stays on your computer. You lead the work. TruthSpine keeps the truth.
 
-🎬 [Watch TruthSpine brief a brand-new agent chat](https://github.com/TimeProofLabs/truthspine-app#readme) — zero re-explaining, straight to the next work.
+This plugin is the connector. It needs the TruthSpine app on the same computer.
 
-TruthSpine automatically gives each connected agent what it needs to continue: your latest project decisions, completed work, supporting evidence, and next steps.
+## Start here
 
-TruthSpine connects the exact project open in a JetBrains IDE to the local TruthSpine app. The plugin never guesses a project root and does not upload project content.
+1. Install this free plugin.
+2. Get the TruthSpine app: the [Microsoft Store](https://apps.microsoft.com/detail/9pbn25k75vdj) on Windows, the [Mac App Store](https://apps.apple.com/us/app/truthspine/id6794478470?mt=12) on Mac, or truthspine.app on Linux (AppImage). The plugin opens the right one.
+3. Say yes when TruthSpine shows the project you have open. It never looks through the rest of your computer.
+4. Add the connection in **Settings > Tools > AI Assistant > Model Context Protocol**: choose **Add**, then **As JSON**, paste what **Copy MCP Configuration** copied, set **Level** to **Project**, and choose **Apply**.
+5. Open a chat and say **Connect TruthSpine** once. From then on it knows your project.
 
 ## Actions
 
-- **Connect Current Project** sends the exact open project root to the local TruthSpine app and prepares the JetBrains connection.
-- **Open TruthSpine** opens the local app without changing projects.
-- **Download TruthSpine App** opens the official store-only acquisition page with JetBrains Marketplace attribution, then offers Microsoft Store or Mac App Store as appropriate.
-- **Copy MCP Configuration** copies the project-level configuration for **Settings > Tools > AI Assistant > Model Context Protocol**.
-- **Copy Attach TruthSpine** copies the short phrase used when a chat requires a manual attach.
-- **Review TruthSpine Connector** opens the JetBrains Marketplace review page.
+- **Connect Current Project** connects the project you have open, after you say yes.
+- **Open TruthSpine** opens the app.
+- **Download TruthSpine App** opens the right store or download page.
+- **Copy MCP Configuration** copies the connection for AI Assistant.
+- **Copy Attach TruthSpine** copies the short phrase for a chat.
+- **Review TruthSpine Connector** opens the Marketplace review page.
 
-When TruthSpine opens the MCP screen, choose **Add**, select **As JSON**, paste the copied connection, set **Level** to **Project**, then choose **Apply**. Open any chat you choose and say **Attach TruthSpine**. The TruthSpine desktop app shows separate confirmations for the project, workspace, and chat connection.
+## Your project and your privacy
 
-The plugin checks for a one-time local connection request when a project opens. It does not collect telemetry, upload project content, or silently change the selected TruthSpine project.
+Your project stays on your computer. When you open a store page from the plugin, it tells our license server which page it opened. It never sends your project or where it is on your computer.
 
-The TruthSpine desktop app must be installed on the same computer.
+## App and price
 
-This connector is free and licensed under Apache License 2.0. The protected TruthSpine desktop app is installed and licensed separately. Installing the plugin does not start a TruthSpine trial or create a separate JetBrains license.
+This connector is free (Apache License 2.0). It needs the TruthSpine app, which you get and buy separately. Installing the connector does not start a trial or need its own license.
 
-On Windows, acquire the one-time free Microsoft Store trial add-on to start 14 days. A one-time USD 95 Microsoft Store purchase unlocks TruthSpine V1 and all 1.x updates on eligible devices for that Store account; reinstalling does not restart the trial.
+On Windows, start the free 14-day trial in the TruthSpine app. Then buy once in the Microsoft Store: $99.99 at the launch price (regular price $249.99), for V1 and every 1.x update. Reinstalling does not restart the trial.
 
-On Mac, the 14-day trial starts only after you choose it and Apple completes the StoreKit transaction. A one-time USD 95 non-consumable purchase unlocks TruthSpine V1 and all 1.x updates, and Restore Purchases restores access on eligible Macs.
+On Mac, start the free 14-day trial in the TruthSpine app. Then buy once in the App Store: $99.99 at the launch price (regular price $249.99), for V1 and every 1.x update. Restore Purchases brings it back on your other Macs.
 
-Future major versions are separate purchases.
+On Linux, the TruthSpine AppImage from truthspine.app starts with a free 14-day trial. Then buy once from us: $99.99 at the launch price (regular price $249.99), for V1 and every 1.x update, on up to three of your own Linux computers. You can move it between them in the app.
+
+Future major versions are sold separately.
 
 ## Build
 

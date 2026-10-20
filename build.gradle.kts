@@ -32,9 +32,12 @@ intellijPlatform {
         }
         changeNotes = """
             <ul>
-              <li>Connects the exact project open in a JetBrains IDE to the protected TruthSpine app.</li>
-              <li>Uses clearer customer-facing setup and license information.</li>
-              <li>Adds a direct, optional JetBrains Marketplace review action.</li>
+              <li>Offers TruthSpine on Linux: Get TruthSpine opens the AppImage download on truthspine.app (sold directly by TimeProofLabs), and the plugin connects once the AppImage has run on this computer.</li>
+              <li>Scopes approval to the displayed folder and requests approval again when that scope changes.</li>
+              <li>Uses the IDE project path directly and never searches the whole computer automatically.</li>
+              <li>Names the package TruthSpine Connector and keeps setup visible until the protected desktop app is detected.</li>
+              <li>Checks queued acquisition-resume state and distinguishes an opening request from a completed connection.</li>
+              <li>Preserves the free connector boundary: trial, purchase, restore, and licensing remain owned by the protected desktop app and its app store.</li>
             </ul>
         """.trimIndent()
     }

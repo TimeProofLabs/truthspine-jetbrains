@@ -1,34 +1,38 @@
 <idea-plugin url="https://truthspine.app/">
   <id>com.timeprooflabs.truthspine</id>
-  <name>TruthSpine</name>
-  <vendor email="support@timeprooflabs.com" url="https://truthspine.app/">TimeProofLabs</vendor>
+  <name>TruthSpine Connector</name>
+  <vendor email="support@truthspine.app" url="https://truthspine.app/">TimeProofLabs</vendor>
   <description><![CDATA[
-    <p><strong>TruthSpine Knows Your Project Truth and Automatically Keeps Your Agents Current, Start to Finish.</strong></p>
-    <p><em>Persistent agent memory and project context for AI coding agents, delivered over MCP — local-first.</em></p>
-    <p><strong>Project truth</strong> is your project's living record: the latest decisions, completed work, supporting evidence, open uncertainty, and next steps — kept current, stored locally on your machine, and traceable through SHA-256 parent-child lineage.</p>
-    <p>TruthSpine knows your project truth from the sources you connect, keeps it current as your project changes, and automatically gives your connected agents the project knowledge and next work they need — delivered over MCP.</p>
+    <p><strong>Whole project truth for every AI you use. On your computer. 14-day free trial, then $99.99 once, down from $249.99 for a limited time.</strong></p>
+    <p><strong>You lead the work. TruthSpine keeps the truth.</strong></p>
+    <p>The keeper of your project. One checked record of what was decided, what was done, what failed and what comes next. Every connected chat starts already knowing your project. Your project stays on your computer. You lead the work. TruthSpine keeps the truth.</p>
+    <p>This plugin connects your JetBrains IDE's AI chat to TruthSpine. Say "Connect TruthSpine" once in a chat, and it knows your project.</p>
     <ul>
-      <li>Connect the exact project open in your JetBrains IDE.</li>
-      <li>Open the local TruthSpine app from the Tools menu.</li>
-      <li>Copy the MCP configuration or the short chat attach phrase when your workspace needs it.</li>
+      <li>Connects the project you have open, and only after you say yes. It never looks through the rest of your computer.</li>
+      <li>The first time, it offers to get the TruthSpine app: the Microsoft Store on Windows, the App Store on Mac, truthspine.app on Linux.</li>
+      <li>Copies the short "Connect TruthSpine" phrase for you when a chat needs it.</li>
     </ul>
-    <p><a href="https://github.com/TimeProofLabs/truthspine-app#readme">Watch TruthSpine brief a brand-new agent chat (60 seconds)</a> — zero re-explaining, straight to the next work.</p>
-    <p>TruthSpine is local-first. This plugin does not collect telemetry or upload project content.</p>
-    <p>This connector is free and licensed under Apache License 2.0. The TruthSpine desktop app is installed and licensed separately. <strong>All licensing is handled by the app stores</strong> — the Microsoft Store on Windows and the App Store on macOS — and the app runs only while the store reports valid usage permission. Both stores offer a free 14-day trial license. If a trial expires without purchase, the protected app features pause until a valid purchase entitlement exists — your project files are never deleted, and the free connectors keep working. Installing the plugin does not start a TruthSpine trial or create a separate connector license.</p>
-    <p>On Windows, you acquire the one-time free Microsoft Store trial add-on to start the 14-day trial. A one-time USD 95 purchase through the Microsoft Store unlocks TruthSpine V1 and all 1.x updates. Ownership follows your Microsoft account and Microsoft's eligible-device and restoration rules; reinstalling does not restart the trial.</p>
-    <p>On Mac, the 14-day trial starts only after you choose it and Apple completes the StoreKit transaction. A one-time USD 95 non-consumable purchase through the App Store unlocks TruthSpine V1 and all 1.x updates, and Restore Purchases restores access on eligible Macs.</p>
-    <p>Future major versions are separate purchases.</p>
+    <p>This plugin is the connector, not the TruthSpine app. When you open a store page from it, it tells our license server which page it opened. It never sends your project or where it is on your computer.</p>
+    <p>This connector is free (Apache License 2.0). It needs the TruthSpine app, which you get and buy separately. Installing the connector does not start a trial or need its own license.</p>
+    <p>On Windows, start the free 14-day trial in the TruthSpine app. Then buy once in the Microsoft Store: $99.99 at the launch price (regular price $249.99), for V1 and every 1.x update. Reinstalling does not restart the trial.</p>
+    <p>On Mac, start the free 14-day trial in the TruthSpine app. Then buy once in the App Store: $99.99 at the launch price (regular price $249.99), for V1 and every 1.x update. Restore Purchases brings it back on your other Macs.</p>
+    <p>On Linux, the TruthSpine AppImage from truthspine.app starts with a free 14-day trial. Then buy once from us: $99.99 at the launch price (regular price $249.99), for V1 and every 1.x update, on up to three of your own Linux computers. You can move it between them in the app.</p>
+    <p>Future major versions are sold separately.</p>
   ]]></description>
   <change-notes><![CDATA[
     <ul>
-      <li>Uses the approved white-tree TruthSpine identity in light and dark IDE themes.</li>
-      <li>Clarifies the free connector license and the separate protected desktop app license.</li>
-      <li>States the correct Windows and Mac trial, purchase, restore, and transfer behavior.</li>
+      <li>Offers TruthSpine on Linux: Get TruthSpine opens the AppImage download on truthspine.app (sold directly by TimeProofLabs), and the plugin connects once the AppImage has run on this computer.</li>
+      <li>Scopes approval to the displayed folder and requests approval again when that scope changes.</li>
+      <li>Uses the IDE project path directly and never searches the whole computer automatically.</li>
+      <li>Checks queued acquisition-resume state and distinguishes an opening request from a completed connection.</li>
+      <li>Keeps a persistent first-run setup action visible until the protected desktop app is detected.</li>
+      <li>Preserves the free connector boundary: trial, purchase, restore, and licensing remain owned by the protected desktop app and its app store.</li>
     </ul>
   ]]></change-notes>
   <depends>com.intellij.modules.platform</depends>
   <extensions defaultExtensionNs="com.intellij">
     <notificationGroup id="TruthSpine" displayType="BALLOON" isLogByDefault="true"/>
+    <notificationGroup id="TruthSpine Setup" displayType="STICKY_BALLOON" isLogByDefault="true"/>
     <postStartupActivity implementation="com.timeprooflabs.truthspine.TruthSpineConnectStartupActivity"/>
   </extensions>
   <actions>
@@ -43,6 +47,10 @@
               class="com.timeprooflabs.truthspine.OpenTruthSpineAction"
               text="Open TruthSpine"
               description="Open the local TruthSpine app"/>
+      <action id="TruthSpine.DownloadApp"
+              class="com.timeprooflabs.truthspine.DownloadTruthSpineAction"
+              text="Download TruthSpine App"
+              description="Install the protected TruthSpine app from Microsoft Store or Mac App Store"/>
       <separator/>
       <action id="TruthSpine.CopyMcpConfiguration"
               class="com.timeprooflabs.truthspine.CopyMcpConfigurationAction"
