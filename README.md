@@ -1,10 +1,10 @@
 # TruthSpine Connector for JetBrains IDEs
 
-**Whole project truth for every AI you use. On your computer. 14-day free trial, then $99.99 once, down from $249.99 for a limited time.**
+**Stop re-explaining your project to every new AI chat. It works on your computer, with no cloud account and nothing extra to install.**
 
 **You lead the work. TruthSpine keeps the truth.**
 
-The keeper of your project. One checked record of what was decided, what was done, what failed and what comes next. Every connected chat starts already knowing your project. Your project stays on your computer. You lead the work. TruthSpine keeps the truth.
+Every connected chat checks your project before it answers, so you never re-explain it. TruthSpine keeps one checked record of what was decided, what was done, what failed, and what comes next.
 
 This plugin is the connector. It needs the TruthSpine app on the same computer.
 
@@ -29,17 +29,15 @@ This plugin is the connector. It needs the TruthSpine app on the same computer.
 
 Your project stays on your computer. When you open a store page from the plugin, it tells our license server which page it opened. It never sends your project or where it is on your computer.
 
-## App and price
+## The TruthSpine app
 
-This connector is free (Apache License 2.0). It needs the TruthSpine app, which you get and buy separately. Installing the connector does not start a trial or need its own license.
+This connector is open source (Apache License 2.0). It needs the TruthSpine app, which you get separately. The connector needs no license of its own.
 
-On Windows, start the free 14-day trial in the TruthSpine app. Then buy once in the Microsoft Store: $99.99 at the launch price (regular price $249.99), for V1 and every 1.x update. Reinstalling does not restart the trial.
+On Windows, get the TruthSpine app from the Microsoft Store.
 
-On Mac, start the free 14-day trial in the TruthSpine app. Then buy once in the App Store: $99.99 at the launch price (regular price $249.99), for V1 and every 1.x update. Restore Purchases brings it back on your other Macs.
+On Mac, get the TruthSpine app from the App Store.
 
-On Linux, the TruthSpine AppImage from truthspine.app starts with a free 14-day trial. Then buy once from us: $99.99 at the launch price (regular price $249.99), for V1 and every 1.x update, on up to three of your own Linux computers. You can move it between them in the app.
-
-Future major versions are sold separately.
+On Linux, get the TruthSpine AppImage from truthspine.app.
 
 ## Build
 
