@@ -1,6 +1,6 @@
 # TruthSpine Connector for JetBrains IDEs
 
-**TruthSpine is your project's memory, kept on your computer and shared by every AI tool you connect, so no new chat starts from zero.**
+**TruthSpine keeps your project’s memory, automatically on your computer and is used by every AI tool you connect, so no new chat starts from zero and the whole project has a full memory to work from.**
 
 **You lead the work. TruthSpine keeps the truth.**
 
